@@ -14,6 +14,15 @@ router.get('/', function(req, res, next) {
 
 	models.Tweet.findAll({ include: [models.User] }).then(function (tweets) {
 		console.log(JSON.stringify(tweets, null, 2))
+		res.render('index', { tweets: tweets, showForm:true})
+	})
+});
+
+
+router.get('/users/:name/:id', function(req, res, next) {
+
+	models.Tweet.findAll({ where: {id: req.params.id}, include: [models.User] }).then(function (tweets) {
+		console.log(JSON.stringify(tweets, null, 2))
 		res.render('index', { tweets: tweets })
 	})
 });
@@ -22,9 +31,11 @@ router.get('/', function(req, res, next) {
 
 
 
+
 // make a tweet
 router.post('/', function(req, res, next) {
   // res.status(201).json(tweetbank.add(req.body.name, req.body.tweet))
+  models.Tweet.create({name: name, text: tweet});
   res.redirect('/')
 })
 
@@ -42,7 +53,7 @@ router.post('/', function(req, res, next) {
 // })
 
 //getting all tweets from a user
-router.get('/users/:name', function(req, res, next) {
+router.get('/usersingle/:name', function(req, res, next) {
 	var u;
 	models.User.findOne({ where: {name: req.params.name}}).then(function (user) {
     u = user;

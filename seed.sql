@@ -19,3 +19,10 @@ INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '4', 'Zeke is mindb
 INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '5', 'Charlotte is amazing');
 INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '6', 'bla bla bla');
 INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '7', 'bla bla bla is so whatever');
+
+
+
+
+INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '1', 'Fullstack is ok! #fsalove');
+INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '1', 'Fullstack is mediocre! #fsalove');
+INSERT INTO `Tweets` (`id`, `userId`, `tweet`) VALUES (NULL, '1', 'Fullstack is terrible! #fsalove');
